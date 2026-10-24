@@ -1,1 +1,234 @@
 
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#2457D6">
+  <meta name="description" content="LIXERA STORE - All Top Up Digital. Top up game favorit dengan mudah.">
+  <title>LIXERA STORE — All Top Up Digital</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="topbar">
+    <a href="#" class="brand" id="brandHome">
+      <span class="brand-icon">L</span>
+      <span class="brand-text">
+        <strong>LIXERA <span>STORE</span></strong>
+        <small>ALL TOP UP DIGITAL</small>
+      </span>
+    </a>
+
+    <button class="home-button" id="homeBtn" aria-label="Kembali ke beranda">
+      ⌂
+    </button>
+  </header>
+
+  <main class="container">
+
+    <!-- HALAMAN UTAMA -->
+    <section id="homeView" class="view">
+
+      <!-- BANNER SLIDER -->
+      <section class="hero-slider" aria-label="Banner promosi">
+        <div class="slider-track" id="sliderTrack">
+          <img src="Banner1.png" alt="Banner promosi LIXERA STORE">
+          <img src="Banner2.png" alt="Banner promosi LIXERA STORE">
+        </div>
+
+        <button class="slider-arrow slider-prev" id="prevSlide"
+          aria-label="Banner sebelumnya">‹</button>
+
+        <button class="slider-arrow slider-next" id="nextSlide"
+          aria-label="Banner berikutnya">›</button>
+
+        <div class="slider-dots">
+          <button class="slider-dot active" data-slide="0"
+            aria-label="Banner 1"></button>
+          <button class="slider-dot" data-slide="1"
+            aria-label="Banner 2"></button>
+        </div>
+      </section>
+
+      <!-- SAMBUTAN -->
+      <section class="welcome">
+        <span class="eyebrow">WELCOME TO</span>
+        <h1>LIXERA <span>STORE</span></h1>
+        <p>ALL TOP UP DIGITAL</p>
+        <p class="welcome-description">
+          Temukan top up game favoritmu dengan mudah dalam satu tempat.
+          Pilih game, tentukan nominal, isi data, lalu lanjutkan pembayaran.
+        </p>
+      </section>
+
+      <!-- KATEGORI GAME -->
+      <section class="categories-section">
+        <div class="section-title">
+          <div>
+            <span class="eyebrow">PILIH GAME FAVORITMU</span>
+            <h2>Game <span>Category</span></h2>
+          </div>
+          <span class="store-status">
+            <i></i> STORE ONLINE
+          </span>
+        </div>
+
+        <div id="categoryGrid" class="category-grid">
+          <!-- Kartu kategori dibuat otomatis oleh script.js -->
+        </div>
+      </section>
+
+      <!-- FOOTER -->
+      <footer class="footer">
+        <div class="footer-logo">L</div>
+        <h3>LIXERA STORE</h3>
+        <p>ALL TOP UP DIGITAL</p>
+        <small>© <span id="year"></span> LIXERA STORE</small>
+      </footer>
+    </section>
+
+    <!-- HALAMAN KATALOG -->
+    <section id="catalogView" class="view hidden">
+
+      <button class="back-button" id="backHome">← Kembali ke kategori</button>
+
+      <div class="catalog-header">
+        <div class="catalog-logo-wrap">
+          <img id="catalogLogo" src="" alt="Logo game">
+        </div>
+
+        <div>
+          <span class="eyebrow">KATALOG PRODUK</span>
+          <h1 id="catalogTitle">Nama Game</h1>
+          <p>Pilih produk dan nominal yang kamu inginkan.</p>
+        </div>
+      </div>
+
+      <!-- DAFTAR HARGA DIBUAT OLEH JAVASCRIPT -->
+      <div id="catalogGroups" class="catalog-groups"></div>
+
+      <!-- FORM PEMESANAN -->
+      <section class="order-panel">
+        <div class="section-title">
+          <div>
+            <span class="eyebrow">LANGKAH BERIKUTNYA</span>
+            <h2>Data <span>Pesanan</span></h2>
+          </div>
+        </div>
+
+        <p class="form-description">
+          Pastikan ID game dan nominal yang dipilih sudah benar.
+        </p>
+
+        <div class="form-grid">
+          <label class="form-field">
+            <span>ID Game / Player ID</span>
+            <input
+              type="text"
+              id="playerId"
+              placeholder="Masukkan ID game"
+              autocomplete="off"
+            >
+          </label>
+
+          <label class="form-field" id="serverWrap">
+            <span>Server / Zone ID</span>
+            <input
+              type="text"
+              id="serverId"
+              placeholder="Masukkan server / zone"
+              autocomplete="off"
+            >
+          </label>
+
+          <label class="form-field full-width">
+            <span>Nama Pembeli (opsional)</span>
+            <input
+              type="text"
+              id="buyerName"
+              placeholder="Masukkan nama kamu"
+              autocomplete="name"
+            >
+          </label>
+        </div>
+
+        <div class="selection-summary" id="selectionSummary">
+          Belum ada produk yang dipilih.
+        </div>
+
+        <label class="confirmation-check">
+          <input type="checkbox" id="confirmCheck">
+          <span>
+            Saya sudah memeriksa game, produk, ID, server, dan total pesanan.
+          </span>
+        </label>
+
+        <button class="primary-button" id="orderBtn" disabled>
+          Order Sekarang <span>→</span>
+        </button>
+
+        <p class="fine-print">
+          Periksa kembali seluruh data sebelum melanjutkan pembayaran.
+        </p>
+      </section>
+    </section>
+
+    <!-- HALAMAN PEMBAYARAN -->
+    <section id="paymentView" class="view hidden">
+
+      <button class="back-button" id="backCatalog">
+        ← Kembali ke pesanan
+      </button>
+
+      <section class="payment-panel">
+        <span class="eyebrow">LANGKAH PEMBAYARAN</span>
+        <h1>Pembayaran <span>QRIS</span></h1>
+        <p>
+          Scan kode QRIS di bawah menggunakan aplikasi pembayaran yang
+          mendukung QRIS.
+        </p>
+
+        <div class="payment-total">
+          <span>Total Pembayaran</span>
+          <strong id="paymentPrice">Rp0</strong>
+        </div>
+
+        <div class="qris-container">
+          <img
+            id="qrisImage"
+            src="qrislixera.jpg"
+            alt="Kode QRIS LIXERA STORE"
+          >
+          <p id="qrisFallback" class="hidden">
+            Gambar QRIS belum ditemukan. Periksa nama file QRIS di GitHub.
+          </p>
+        </div>
+
+        <div id="paymentSummary" class="payment-summary"></div>
+
+        <label class="confirmation-check">
+          <input type="checkbox" id="paidCheck">
+          <span>
+            Saya sudah melakukan pembayaran sesuai total pesanan.
+          </span>
+        </label>
+
+        <button class="primary-button" id="waBtn" disabled>
+          Konfirmasi via WhatsApp <span>↗</span>
+        </button>
+
+        <p class="fine-print">
+          Setelah mengirim konfirmasi, admin akan memeriksa pembayaran
+          secara manual. Centang pembayaran bukan bukti verifikasi otomatis.
+        </p>
+      </section>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
